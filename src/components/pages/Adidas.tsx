@@ -17,23 +17,23 @@ export type AdidasItem = {
 export const adidasArr: AdidasItem[] = [
   {
     id: 1,
-    model: 'ADIDAS ADIFOM TRXN',
-    collection: 'new collection1',
-    price: '100200$',
+    model: 'ADIDAS TRX 2024',
+    collection: 'new collection 2024',
+    price: '960$',
     picture: adidasModel1
   },
   {
     id: 2,
-    model: 'ADIDAS ADIFOM SUPER',
-    collection: 'new collection22',
-    price: '200300$',
+    model: 'ADIDAS DAILY',
+    collection: 'collection 2023',
+    price: '670$',
     picture: adidasModel2
   },
   {
     id: 3,
-    model: 'ADIDAS SUPER SUPERSKI',
-    collection: 'new collection333',
-    price: '300400$',
+    model: 'ADIDAS BASKETBALL',
+    collection: 'collection 2023',
+    price: '760$',
     picture: adidasModel3
   }
 ]
