@@ -1,19 +1,19 @@
 import React from 'react';
-import styles from "./components/Site.module.css";
-import {Adidas} from "./components/pages/Adidas";
-import {Puma} from "./components/pages/Puma";
-import {Abibas} from "./components/pages/Abibas";
-import {Navigate, NavLink, Route, Routes} from "react-router-dom";
-import {Error404} from "./components/pages/Error404";
-import {Styles} from "./components/pages/styles";
-import {Model} from "./components/pages/Model";
-import {NoModel} from "./components/pages/NoModel";
-import {ModelPuma} from "./components/pages/ModelPuma";
+import styles from './components/Site.module.css';
+import {Adidas} from './components/pages/Adidas';
+import {Puma} from './components/pages/Puma';
+import {Abibas} from './components/pages/Abibas';
+import {Navigate, NavLink, Route, Routes} from 'react-router-dom';
+import {Error404} from './components/pages/Error404';
+import {Styles} from './components/pages/styles';
+import {Model} from './components/pages/Model';
+import {ModelPuma} from './components/pages/ModelPuma';
 
 const PATH = {
   Adidas: '/adidas',
   Puma: '/puma',
   Abibas: '/abibas',
+  Model: '/model'
 } as const
 
 function App() {
@@ -36,17 +36,18 @@ function App() {
             <Route path={PATH.Adidas} element={<Adidas/>}/>
             <Route path={PATH.Puma} element={<Puma/>}/>
             <Route path={PATH.Abibas} element={<Abibas/>}/>
-            <Route path={'model'} element={<Model/>}/>
-            <Route path={'adidas/:id'} element={<Model/>}/>
-            <Route path={'puma/:id'} element={<ModelPuma/>}/>
+            <Route path={PATH.Model} element={<Model/>}/>
+            <Route path={PATH.Adidas + '/:id'} element={<Model/>}/>
+
+            {/*<Route path={'puma/:id'} element={<ModelPuma/>}/>*/}
 
             <Route path={'/*'} element={<Error404/>}/>
-            {/*<Route path={'adidas/:id/*'} element={<NoModel/>}/>*/}
+            <Route path={PATH.Adidas + '/*'} element={<Error404/>}/>
 
           </Routes>
         </div>
       </div>
-      <div className={styles.footer}>abibas 2023</div>
+      <div className={styles.footer}>Abibas, 2024</div>
     </div>
   );
 }

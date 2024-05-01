@@ -1,9 +1,9 @@
 import React from 'react';
-import puma1 from "../../assets/puma1.jpg";
-import puma2 from "../../assets/puma2.jpg";
-import puma3 from "../../assets/puma3.jpg";
-import {adidasArr, AdidasItem} from "./Adidas";
-import {Link} from "react-router-dom";
+import puma1 from '../../assets/puma1.jpg';
+import puma2 from '../../assets/puma2.jpg';
+import puma3 from '../../assets/puma3.jpg';
+import {AdidasItem} from './Adidas';
+import {Link} from 'react-router-dom';
 
 export const pumaArr: AdidasItem[] = [
     {
