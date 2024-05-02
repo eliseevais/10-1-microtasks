@@ -7,11 +7,13 @@ import {Navigate, NavLink, Route, Routes} from 'react-router-dom';
 import {Error404} from './components/pages/Error404';
 import {Styles} from './components/pages/styles';
 import {Model} from './components/pages/Model';
+import {Prices} from "./components/pages/Prices";
 
 const PATH = {
   Adidas: '/adidas',
   Puma: '/puma',
-  Abibas: '/abibas'
+  Abibas: '/abibas',
+  Prices: '/prices'
 } as const
 
 function App() {
@@ -21,9 +23,10 @@ function App() {
       <div className={styles.body}>
         <div className={styles.nav}>
 
-          <Styles.NavWrapper><NavLink to={PATH.Adidas}>ADIDAS</NavLink></Styles.NavWrapper>
-          <Styles.NavWrapper><NavLink to={PATH.Puma}>PUMA</NavLink></Styles.NavWrapper>
-          <Styles.NavWrapper><NavLink to={PATH.Abibas}>ABIBAS</NavLink></Styles.NavWrapper>
+          <Styles.NavWrapper><NavLink to={PATH.Adidas}>Adidas</NavLink></Styles.NavWrapper>
+          <Styles.NavWrapper><NavLink to={PATH.Puma}>Puma</NavLink></Styles.NavWrapper>
+          <Styles.NavWrapper><NavLink to={PATH.Abibas}>Abibas</NavLink></Styles.NavWrapper>
+          <Styles.NavWrapper><NavLink to={PATH.Prices}>Цены для оптовиков</NavLink></Styles.NavWrapper>
 
         </div>
 
@@ -34,6 +37,8 @@ function App() {
             <Route path={PATH.Adidas} element={<Adidas/>}/>
             <Route path={PATH.Puma} element={<Puma/>}/>
             <Route path={PATH.Abibas} element={<Abibas/>}/>
+            <Route path={PATH.Prices} element={<Prices/>}/>
+
             <Route path={'/:model/:id/'} element={<Model/>}/>
 
             <Route path={'/*'} element={<Error404/>}/>
