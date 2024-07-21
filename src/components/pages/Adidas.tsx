@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {ReactNode} from 'react';
 import adidasModel1
   from './../../assets/AdiFOM_TRXN_Shoes_Black_IG7453_01_standard.webp'
 import adidasModel2
@@ -14,6 +14,7 @@ export type AdidasItem = {
   price: string;
   picture: string;
 }
+
 export const adidasArr: AdidasItem[] = [
   {
     id: 1,

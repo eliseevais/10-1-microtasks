@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {createBrowserRouter} from 'react-router-dom';
+import {createBrowserRouter, Route} from 'react-router-dom';
 import App from '../App';
 import {Error404} from '../components/pages/Error404';
 import {Adidas} from "../components/pages/Adidas";
@@ -8,6 +8,7 @@ import {Prices} from "../components/pages/Prices";
 import {Abibas} from "../components/pages/Abibas";
 import {ProtectedRoute} from "./protectedRoute";
 import {ProtectedPage} from "../components/pages/ProtectedPage";
+import {Model} from "../components/pages/Model";
 
 const PATH = {
   Adidas: '/adidas',
@@ -15,7 +16,8 @@ const PATH = {
   Abibas: '/abibas',
   Prices: '/prices',
   ProtectedPage: '/protectedPage',
-  Error: '/error'
+  Error: '/error',
+  Model: '/:model/:id/'
 } as const
 
 export const router = createBrowserRouter([
@@ -52,6 +54,12 @@ export const router = createBrowserRouter([
         path: PATH.Error,
         element: <Error404/>
       },
+      {
+        path: PATH.Model,
+        element: <Model/>,
+      },
     ]
   },
 ]);
+
+{/*  <Route path={'/:model/:id/'} element={<Model/>}/>*/}

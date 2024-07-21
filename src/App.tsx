@@ -33,6 +33,22 @@ function App() {
 
         <div className={styles.content}>
           <Outlet/>
+
+          {/*<Routes>*/}
+          {/*  <Route path={'/'} element={<Navigate to={PATH.Adidas}/>}/>*/}
+
+          {/*  <Route path={PATH.Adidas} element={<Adidas/>}/>*/}
+          {/*  <Route path={PATH.Puma} element={<Puma/>}/>*/}
+          {/*  <Route path={PATH.Abibas} element={<Abibas/>}/>*/}
+          {/*  <Route path={PATH.Prices} element={<Prices/>}/>*/}
+
+          {/*  <Route path={'/:model/:id/'} element={<Model/>}/>*/}
+
+          {/*  <Route path={'/*'} element={<Error404/>}/>*/}
+          {/*  <Route path={PATH.Adidas + '/*'} element={<Error404/>}/>*/}
+
+          {/*</Routes>*/}
+
         </div>
       </div>
       <div className={styles.footer}>Your sneakers, 2024</div>
