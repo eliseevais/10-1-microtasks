@@ -82,6 +82,10 @@ export const router = createBrowserRouter([
     errorElement: <Navigate to={PATH.Error}/>,
     children: [
       {
+        index: true,
+        element: <Navigate to={PATH.Adidas}/>
+      },
+      {
         element: <PrivateRoute/>,
         children: privateRoutes
       },

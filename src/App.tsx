@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './components/Site.module.css';
-import {NavLink, Outlet} from 'react-router-dom';
+import {Link, NavLink, Outlet, useNavigate} from 'react-router-dom';
 import {Styles} from './components/pages/styles';
 
 const PATH = {
@@ -12,26 +12,44 @@ const PATH = {
 } as const
 
 function App() {
+  const navigate = useNavigate();
+  const navigateHandler = () => {
+    navigate(-1)
+  }
+
   return (
     <div>
       <div className={styles.header}><h1>CHOOSE YOUR BEST SNEAKERS</h1></div>
       <div className={styles.body}>
         <div className={styles.nav}>
 
-          <Styles.NavWrapper><NavLink
-            to={PATH.Adidas}>Adidas</NavLink></Styles.NavWrapper>
-          <Styles.NavWrapper><NavLink
-            to={PATH.Puma}>Puma</NavLink></Styles.NavWrapper>
-          <Styles.NavWrapper><NavLink
-            to={PATH.Abibas}>Abibas</NavLink></Styles.NavWrapper>
-          <Styles.NavWrapper><NavLink to={PATH.Prices}>Цены для
-            оптовиков</NavLink></Styles.NavWrapper>
-          <Styles.NavWrapper><NavLink to={PATH.ProtectedPage}>Protected
-            Page</NavLink></Styles.NavWrapper>
+          <Styles.NavWrapper>
+            <NavLink to={PATH.Adidas}>Adidas</NavLink>
+          </Styles.NavWrapper>
+          <Styles.NavWrapper>
+            <NavLink to={PATH.Puma}>Puma</NavLink>
+          </Styles.NavWrapper>
+          <Styles.NavWrapper>
+            <NavLink to={PATH.Abibas}>Abibas</NavLink>
+          </Styles.NavWrapper>
+          <Styles.NavWrapper>
+            <NavLink to={PATH.Prices}>Цены для оптовиков</NavLink>
+          </Styles.NavWrapper>
+          <Styles.NavWrapper>
+            <NavLink to={PATH.ProtectedPage}>Protected Page</NavLink>
+          </Styles.NavWrapper>
 
         </div>
 
         <div className={styles.content}>
+
+          <div className={styles.HorizontalNavigation}>
+            <Link className={styles.LinkLikeButton}
+                     to={PATH.Adidas}>Main</Link>
+            <button className={styles.ButtonLikeLink}
+                  onClick={navigateHandler}>Back</button>
+          </div>
+
           <Outlet/>
 
           {/*<Routes>*/}
